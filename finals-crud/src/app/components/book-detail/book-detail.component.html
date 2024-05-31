@@ -1,0 +1,39 @@
+  <form class="max-w-lg mx-auto bg-white p-8 mt-2 mb-2 rounded-lg shadow-lg" [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-900">Add a New Book</h2>
+    <div class="space-y-4">
+      <div class="relative">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Enter Book Title</mat-label>
+          <input matInput placeholder="Ex. The Great Gatsby" formControlName="title" required>
+        </mat-form-field>
+      </div>
+      <div class="relative">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Author</mat-label>
+          <input matInput type="text" formControlName="author" required>
+        </mat-form-field>
+      </div>
+      <div class="relative">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Price</mat-label>
+          <input matInput type="text" formControlName="price" required>
+        </mat-form-field>
+      </div>
+      <div class="relative">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Description</mat-label>
+          <textarea matInput rows="4" formControlName="description" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="relative">
+        <mat-label class="block text-sm font-medium text-gray-700 mb-2">Book Type</mat-label>
+        <mat-chip-listbox aria-label="Book type" formControlName="book_type" class="w-full">
+          <mat-chip-option class="mr-2 mb-2">Local Author</mat-chip-option>
+          <mat-chip-option class="mr-2 mb-2">Foreign Author</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      <div class="relative text-center">
+        <button class="w-full text-white bg-indigo-600 border-0 py-3 px-6 focus:outline-none hover:bg-indigo-700 rounded-lg text-lg" type="submit">Update</button>
+      </div>
+    </div>
+  </form>

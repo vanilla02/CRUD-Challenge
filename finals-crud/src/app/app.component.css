@@ -1,0 +1,10 @@
+/*
+*/
+
+.active{ 
+    background: 'light-gray' 
+}
+
+header, footer {
+    background-color: rgb(0, 0, 0);
+}

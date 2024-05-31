@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+  <div class="mb-5">
+
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Featured Books</h1>
+            <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+          </div>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Discover some of the most popular books in our collection. Whether you love fiction, non-fiction, or science, we have the perfect book for you.</p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <mat-card class="rounded-lg">
+              <img mat-card-image class="h-40 w-full object-cover object-center mb-6" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg" alt="Fiction">
+              <mat-card-content>
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">FICTION</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">The Great Gatsby</h2>
+                <p class="leading-relaxed text-base">A classic novel by F. Scott Fitzgerald that explores themes of wealth, love, and the American Dream.</p>
+                <p class="text-gray-600 mt-2">Author: F. Scott Fitzgerald</p>
+                <p class="text-gray-600 mt-2">Published: 1925</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <mat-card class="rounded-lg">
+              <img mat-card-image class="h-40 w-full object-cover object-center mb-6" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg" alt="Non-fiction">
+              <mat-card-content>
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">NON-FICTION</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Sapiens: A Brief History of Humankind</h2>
+                <p class="leading-relaxed text-base">An insightful book by Yuval Noah Harari that chronicles the history of the human species.</p>
+                <p class="text-gray-600 mt-2">Author: Yuval Noah Harari</p>
+                <p class="text-gray-600 mt-2">Published: 2011</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <mat-card class="rounded-lg">
+              <img mat-card-image class="h-40 w-full object-cover object-center mb-6" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoeQKVImpVB7UubJRbQDvswawkYiYomgekzQ&s" alt="Science">
+              <mat-card-content>
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SCIENCE</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">A Brief History of Time</h2>
+                <p class="leading-relaxed text-base">Stephen Hawking's landmark book that explores the universe's most profound questions.</p>
+                <p class="text-gray-600 mt-2">Author: Stephen Hawking</p>
+                <p class="text-gray-600 mt-2">Published: 1988</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <mat-card class="rounded-lg">
+              <img mat-card-image class="h-40 w-full object-cover object-center mb-6" src="https://cdn.kobo.com/book-images/412095f6-33b1-4171-b0ec-ced5eecf866b/1200/1200/False/the-history-of-the-ancient-world-from-the-earliest-accounts-to-the-fall-of-rome.jpg" alt="History">
+              <mat-card-content>
+                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">HISTORY</h3>
+                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">The History of the Ancient World</h2>
+                <p class="leading-relaxed text-base">A fascinating journey through the history of ancient civilizations.</p>
+                <p class="text-gray-600 mt-2">Author: Susan Wise Bauer</p>
+                <p class="text-gray-600 mt-2">Published: 2007</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <h2 class="text-2xl font-bold text-center mb-6 text-gray-900">Add a New Book</h2>
+      <div class="space-y-4">
+        <div class="relative">
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Enter Book Title</mat-label>
+            <input matInput placeholder="Ex. The Great Gatsby" formControlName="title" required>
+          </mat-form-field>
+        </div>
+        <div class="relative">
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Author</mat-label>
+            <input matInput type="text" formControlName="author" required>
+          </mat-form-field>
+        </div>
+        <div class="relative">
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Price</mat-label>
+            <input matInput type="text" formControlName="price" required>
+          </mat-form-field>
+        </div>
+        <div class="relative">
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Description</mat-label>
+            <textarea matInput rows="4" formControlName="description" required></textarea>
+          </mat-form-field>
+        </div>
+        <div class="relative">
+          <mat-label class="block text-sm font-medium text-gray-700 mb-2">Book Type</mat-label>
+          <mat-chip-listbox aria-label="Book type" formControlName="book_type" class="w-full">
+            <mat-chip-option class="mr-2 mb-2">Local Author</mat-chip-option>
+            <mat-chip-option class="mr-2 mb-2">Foreign Author</mat-chip-option>
+          </mat-chip-listbox>
+        </div>
+        <div class="relative text-center">
+          <button class="w-full text-white bg-indigo-600 border-0 py-3 px-6 focus:outline-none hover:bg-indigo-700 rounded-lg text-lg" type="submit">Add Book</button>
+        </div>
+      </div>
+    </form>
+    
+
+  </div>
+
+</div>
